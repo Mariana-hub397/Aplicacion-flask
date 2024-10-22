@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienestar Animal - Página Principal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Sistema de Gestión de Bienestar Animal - Producción Ovina</h1>
+
+    <!-- Formulario para registrar datos de bienestar animal -->
+    <form action="/guardar_animal" method="post">
+        <label for="animal_id">ID del Animal:</label>
+        <input type="text" name="animal_id" required><br>
+
+        <label for="alimentacion">Alimentación:</label>
+        <input type="text" name="alimentacion" required><br>
+
+        <label for="salud">Salud:</label>
+        <input type="text" name="salud" required><br>
+
+        <label for="comportamiento">Comportamiento:</label>
+        <input type="text" name="comportamiento" required><br>
+
+        <label for="manejo_ambiental">Manejo Ambiental:</label>
+        <input type="text" name="manejo_ambiental" required><br>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" name="fecha" required><br>
+
+        <button type="submit">Guardar</button>
+    </form>
+
+    <!-- Lista de animales registrados -->
+    <h2>Animales Registrados</h2>
+    <ul>
+        {% for animal in animales %}
+        <form action="/editar_animal/{{ animal.animal_id }}" method="post">
+            <label for="animal_id">ID del Animal:</label>
+            <input type="text" name="animal_id" value="{{ animal.animal_id }}" readonly><br>
+
+            <label for="alimentacion">Alimentación:</label>
+            <input type="text" name="alimentacion" value="{{ animal.alimentacion }}"><br>
+
+            <label for="salud">Salud:</label>
+            <input type="text" name="salud" value="{{ animal.salud }}"><br>
+
+            <label for="comportamiento">Comportamiento:</label>
+            <input type="text" name="comportamiento" value="{{ animal.comportamiento }}"><br>
+
+            <label for="manejo_ambiental">Manejo Ambiental:</label>
+            <input type="text" name="manejo_ambiental" value="{{ animal.manejo_ambiental }}"><br>
+
+            <label for="fecha">Fecha:</label>
+            <input type="date" name="fecha" value="{{ animal.fecha }}"><br>
+
+            <button type="submit">Actualizar</button>
+            <a onclick="return confirm('¿Está seguro de eliminar este registro?')"
+            href='{{ url_for("eliminar", animal_id=animal.animal_id) }}'>Eliminar</a>
+        </form>
+        {% endfor %}
+    </ul>
+</body>
+</html>

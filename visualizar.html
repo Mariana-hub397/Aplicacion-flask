@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Datos - Sistema de Bienestar Animal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Datos de Bienestar Animal - Producción Ovina</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>11012</th>
+                <th>Heno</th>
+                <th>Sofomax</th>
+                <th>Gregario</th>
+                <th>Dag score</th>
+                <th>08/10/2024</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dato in datos %}
+            <tr>
+                <td>{{ dato['animal_id'] }}</td>
+                <td>{{ dato['alimentacion'] }}</td>
+                <td>{{ dato['salud'] }}</td>
+                <td>{{ dato['comportamiento'] }}</td>
+                <td>{{ dato['manejo_ambiental'] }}</td>
+                <td>{{ dato['fecha'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2><a href="/">Volver al inicio</a></h2>
+</body>
+</html>

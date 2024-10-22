@@ -1,0 +1,91 @@
+/* Estilos generales */
+body {
+    font-family:cursive;
+    background-image: url('../img/fondo.jpg'); /* Agregamos una imagen de fondo */
+    background-size: cover; /* La imagen cubre toda la pantalla */
+    background-attachment: fixed; /* El fondo se mantiene fijo al hacer scroll */
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    color: #333; /* Cambiamos el color del texto para mejor contraste */
+}
+
+
+/* Encabezados */
+h1, h2 {
+    color: #202329; /* Cambiamos el color de los encabezados a blanco para que contrasten con el fondo */
+    text-align: center;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Añadimos sombra al texto */
+}
+
+/* Formulario */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Etiquetas del formulario */
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* Campos de texto y fechas */
+input[type="text"], input[type="date"] {
+    width: 100%;
+    padding: 12px; /* Mayor espacio interno */
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px; /* Bordes más redondeados */
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 16px; /* Tamaño de texto más grande */
+}
+
+/* Botón */
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para el botón */
+    transition: background-color 0.3s ease; /* Transición suave al hacer hover */
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+/* Enlaces */
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Contenedor para las imágenes */
+.img-container {
+    text-align: center; /* Centrar la imagen */
+    margin-top: 20px;
+}
+
+.img-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Bordes redondeados para la imagen */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para la imagen */
+}
